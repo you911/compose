@@ -1,0 +1,33 @@
+ext {
+    compose_ui_version = '1.1.1'
+    compileSdk = 33
+    targetSdk = 33
+    minSdk = 21
+    buildToolsVersion = "33.0.0"
+    deps = [
+            junit                  : "junit:junit:4.13.2",
+            espresso_core          : "androidx.test.espresso:espresso-core:3.4.0",
+            core_ktx               : "androidx.core:core-ktx:1.9.0",
+            coroutines_core        : "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2",
+            coroutines_android     : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2",
+            lifecycle_extensions   : "androidx.lifecycle:lifecycle-extensions:2.2.0",
+            lifecycle_viewmodel_ktx: "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1",
+            lifecycle_runtime_ktx  : "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1",
+            lifecycle_livedata_ktx : "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1",
+            rxpermissions          : "com.github.tbruyelle:rxpermissions:0.10.2",
+            rxjava                 : "io.reactivex.rxjava2:rxjava:2.2.12",
+            retrofit               : "com.squareup.retrofit2:retrofit:2.9.0",
+            converter_gson         : "com.squareup.retrofit2:converter-gson:2.9.0",
+            logging_interceptor    : "com.squareup.okhttp3:logging-interceptor:4.4.0",
+            glide                  : "com.github.bumptech.glide:glide:4.11.0",
+            android_junit          : "androidx.compose.ui:ui-test-junit4:1.1.1",
+            compose_material       : "androidx.compose.material:material:1.1.1",
+            compose_activity       : "androidx.activity:activity-compose:1.4.0",
+            compose_ui             : "androidx.compose.ui:ui:1.1.1",
+            compose_ui_preview     : "androidx.compose.ui:ui-tooling-preview:1.1.1",
+            compose_ui_tooling     : "androidx.compose.ui:ui-tooling:1.1.1",
+            compose_ui_manifest    : "androidx.compose.ui:ui-test-manifest:1.1.1",
+            lib_support            : "com.github.you911:support:1.0.0",
+
+    ]
+}
