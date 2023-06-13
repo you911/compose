@@ -2,9 +2,9 @@ package tech.wcw.compose.simple
 
 import android.Manifest
 import android.content.Intent
+import  androidx.compose.ui.graphics.Color
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import tech.wcw.compose.base.BaseActivity
 import tech.wcw.compose.base.Head
@@ -57,9 +58,9 @@ class MainActivity : BaseActivity<MainViewModel>() {
                 },
             )
         }) {
-            LogUtils.i(TAG,"draw scaffold")
+            LogUtils.i(TAG, "draw scaffold")
             LazyColumn(state = state, modifier = Modifier.fillMaxWidth()) {
-                LogUtils.i(TAG,"draw LazyColumn")
+                LogUtils.i(TAG, "draw LazyColumn")
                 item {
                     Button(
                         onClick = {
@@ -109,6 +110,15 @@ class MainActivity : BaseActivity<MainViewModel>() {
                         Text(text = "清空接口数据")
                     }
                 }
+                mViewModel.errorMsg.value?.let {
+                    item {
+                        Text(
+                            text = "${mViewModel.errorMsg.value}",
+                            style = TextStyle(color = Color.Red)
+                        )
+                    }
+                }
+
                 items(mViewModel.newsResult.size) { index ->
                     Text(text = "${mViewModel.newsResult[index].title}")
                 }

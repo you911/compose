@@ -5,14 +5,13 @@ import androidx.compose.runtime.mutableStateOf
 import tech.wcw.compose.base.BaseViewModel
 import tech.wcw.compose.simple.api.ApiService
 import tech.wcw.compose.simple.model.NewsItem
-import tech.wcw.compose.simple.model.NewsResult
 import tech.wcw.support.retrofit
 import tech.wcw.support.service
 import tech.wcw.support.utils.LogUtils
 
 class MainViewModel : BaseViewModel() {
     val newsResult = mutableStateListOf<NewsItem>()
-
+    val errorMsg = mutableStateOf<String?>(null)
     val TAG = "MainViewModel"
     override fun onCreate() {
         LogUtils.i(TAG, "onCreate")
@@ -41,6 +40,8 @@ class MainViewModel : BaseViewModel() {
             success = {
                 if (it.isSuccess() && it.result != null) {
                     newsResult.addAll(it.result.data)
+                } else {
+                    errorMsg.value = it.reason
                 }
             }
         )
